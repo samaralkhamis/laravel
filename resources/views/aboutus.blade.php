@@ -191,6 +191,18 @@
         </div>
         <br> <br>
 
+        <?php
+   #foreach ($Team as $T) {
+
+   #print_r($T["Name"]);
+     
+   #print_r($T["Age"]);
+      
+  #echo "<br>";
+ 
+  //  }
+?> 
+
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
   <!-- Section: Social media -->
