@@ -21,9 +21,9 @@ class newController extends Controller
 //       return view('layout.aboutus');
 //    }
 
-//    public function displaycontact(){
-//       return view('layout.contact');
-//    }
+   public function displaycontact(){
+      return view('layout.contact');
+   }
 
    public function displayHome(){
       return view('layout.candi');
@@ -55,7 +55,7 @@ public function createData(Request $request){
    $create->CandyPrice=$request->input('CandyPrice');
    $create->CandyQuantity=$request->input('CandyQuantity');
    $create->save();
-   return redirect('layout.shop')->with('message','The data has been added successfully');
+   return redirect('\shop')->with('message','The data has been added successfully');
 }
  
 
@@ -90,4 +90,17 @@ public function selectData($id){
    $update= shop::find($id);
    return view('layout.showData',compact('update'));
 }
+
+########## validat data ######################
+public function form_validate(Request $request){
+   $request->validate([
+       'firstname'=>'required|alpha',
+       'Secoundname'=>'required|alpha',
+       'email'=>'required|email',       
+       'phonenumber'=>'numeric|digits_between:9,11',
+       'city'=>'required|alpha',
+       'password'=>'required|min:8|regex:/^.(?=.{3,})(?=.[a-zA-Z])(?=.[0-9])(?=.[\d\x])(?=.[!$#%]).$/',
+   ]);
+
+   return $request->input(); }
 }

@@ -7,7 +7,7 @@
     <title>Update</title>
 </head>
 <body>
-    <form action="{{url('update-data/id/'.$update->id)}}" method="post">
+    <form action="{{url('/update-data/id/'.$update->id)}}" method="post">
     @csrf
     @method('PUT')
     <!--Update title-->
