@@ -52,13 +52,22 @@ use App\Http\Controllers\newController;
 
 ######## routing with controller #########
 
-Route::get('index/id/{id}/name/{name}', [newController::class, 'check'] )->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+// Route::get('index/id/{id}/name/{name}', [newController::class, 'check'] )->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 Route::get('master', [newController::class, 'display'] );
-Route::get('about', [newController::class, 'displayabout'] );
-Route::get('contact', [newController::class, 'displaycontact'] );
+// Route::get('about', [newController::class, 'displayabout'] );
+// Route::get('contact', [newController::class, 'displaycontact'] );
 Route::get('candi', [newController::class, 'displayHome'] );
 
-Route::get('about', [newController::class, 'displayarray'] );
+// Route::get('about', [newController::class, 'displayarray'] );
 
+
+########### CRUD ROUTE #################
+Route::get('/shop', [newController::class, 'viewData']);
+Route::get('/showData/id/{id}', [newController::class, 'SelectData']);
+Route::get('/edit-data/id/{id}', [newController::class, 'editData']);
+Route::put('/update-data/id/{id}', [newController::class, 'updateData']);
+Route::get('/delete-data/id/{id}', [newController::class, 'deleteData']);
+Route::get('add-data', [newController::class, 'addData']);
+Route::post('add-data', [newController::class, 'createData']);
 
 

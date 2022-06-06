@@ -4,5 +4,6 @@
     @yield('contact')
     @yield('home')
     @yield('team')
+    @yield('content')
 
 @include('layout.footer')

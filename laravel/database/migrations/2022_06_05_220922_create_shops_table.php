@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewDbmigTable extends Migration
+class CreateShopsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateNewDbmigTable extends Migration
      */
     public function up()
     {
-        Schema::create('new_dbmig', function (Blueprint $table) {
-            $table->bigIncrements('id');;
+        Schema::create('shops', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('CandyName');
             $table->integer('CandyPrice');
             $table->integer('CandyQuantity');
@@ -28,6 +28,6 @@ class CreateNewDbmigTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('new_dbmig');
+        Schema::dropIfExists('shops');
     }
 }
